@@ -35,7 +35,7 @@ a:hover, a:active {
 
 }
 .accordion:after {
-  content: 'close';
+  content: '▶';
   font-size: 13px;
   color: #444;
   float: right;
@@ -44,7 +44,7 @@ a:hover, a:active {
 
 .active:after {
 
-  content: "open";
+  content: "▼";
   color: white;
 }
 
@@ -95,11 +95,19 @@ form.example::after {
 <h1 style= "color:#444; text-align:center; font-size:300%; font-family: Helvetica"> The Better College App Website </h1>
 
 <div align="center">
+  <form>
+   <select id="mySelect" size="8">
+     <option>Apple</option>
+     <option>Pear</option>
+     <option>Banana</option>
+     <option>Orange</option>
+</select>
+</form>
   <button class="accordion">About Me</button>
   <div class="panel">
   <p style= "font-family: Helvetica;"> Your name </p>
   <p style= "font-family: Helvetica;"> Your school </p>
-  <a href="aboutme.html"> read more about you </a>
+  <a href="aboutme"> More about you </a>
   </div>
 
 <button class="accordion">Lee University</button>
@@ -154,14 +162,16 @@ form.example::after {
   <form class="example" onsubmit="searchSubmit()" style="max-width:70%">
     <input type="text" id="collegeSearch" placeholder="Search for a University..." name="search">
     <br> </br>
+    <button type="button" onclick="myFunction()">Insert option</button>
   </form>
 </div>
+
 
 
 </div>
 
 <script>
-
+var addedCollege;
 var COLLEGES = {
   "lee university": "Lee University",
   "tam college": "Tam College",
@@ -171,18 +181,17 @@ var COLLEGES = {
   "holdridge school of music": "Holdridge School of Music"
 }
 
-function addCollege(){
-  if COLLEGES[value] = "Lee University"(
-
-  )
+function addToDropdown(){
+  //if COLLEGES[value] =
 }
+
 
 function searchSubmit(){
   var value = document.getElementById("collegeSearch").value.toLowerCase();
   console.log(COLLEGES[value]);
-  COLLEGES[value];
-  debugger;
-
+  COLLEGES[value] = addedCollege;
+  //debugger;
+  addToDropdown();
 
 }
 
@@ -199,7 +208,13 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
-  //huhophadsf;fhdso
+}
+
+function myFunction() {
+  var x = document.getElementById("mySelect");
+  var option = document.createElement("option");
+  option.text = addedCollege;
+  x.add(option);
 }
 </script>
 
