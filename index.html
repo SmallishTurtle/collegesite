@@ -33,6 +33,33 @@ a:hover, a:active {
   font-size: 15px;
   transition: 0.4s;
 }
+
+.notaccordion {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.notaccordion:after {
+  content: '▶';
+  font-size: 13px;
+  color: #444;
+  float: right;
+  margin-left: 5px;
+}
+
+.notaccordion:hover {
+  background-color: #00b35c;
+  color:white
+}
+
 .hiddenaccordion {
   display: none;
 }
@@ -184,15 +211,39 @@ form.example::after {
   </form>
 </div> -->
 
-<br>
+
 <button class = "accordion">Find your University</button>
 <div class = "panel">
-<button class = "accordion" onclick="HansenInst()"> Hansen Institute of Technology </button>
-<button class = "accordion" onclick="HoldridgeMusic()"> Holdridge School of Music </button>
-<button class = "accordion" onclick="LeeUni()"> Lee University </button>
-<button class = "accordion" onclick="LopCol()"> Lopez College of the Arts </button>
-<button class = "accordion" onclick="TamCol()"> Tam College </button>
-<button class = "accordion" onclick="UoH()"> University of Hatfield </button>
+<button class = "accordion"> Hansen Institute of Technology </button>
+  <div class = "panel">
+    <button class = "notaccordion" onclick="HansenInst()"> Apply to Hansens </button>
+    <button class="notaccordion" onclick="NoHans()">I no longer want to apply</button>
+  </div>
+<button class = "accordion"> Holdridge School of Music </button>
+<div class = "panel">
+  <button class = "notaccordion" onclick="HoldridgeMusic()"> Apply to Holdridge </button>
+  <button class="notaccordion" onclick="NoHold()">I no longer want to apply</button>
+</div>
+<button class = "accordion"> Lee University </button>
+  <div class = "panel">
+    <button class = "notaccordion" onclick="LeeUni()"> Apply to Lee </button>
+    <button class="notaccordion" onclick="NoLee()">I no longer want to apply</button>
+  </div>
+<button class = "accordion"> Lopez College of the Arts </button>
+  <div class = "panel">
+    <button class = "notaccordion" onclick="LopCol()"> Apply to Lopez </button>
+    <button class="notaccordion" onclick="NoLop()">I no longer want to apply</button>
+  </div>
+<button class = "accordion"> Tam College </button>
+  <div class = "panel">
+    <button class = "notaccordion" onclick="TamCol()"> Apply to Tam</button>
+    <button class="notaccordion" onclick="NoTam()">I no longer want to apply</button>
+  </div>
+<button class = "accordion"> University of Hatfield </button>
+  <div class = "panel">
+    <button class = "notaccordion" onclick="UoH()"> Apply to Hatfield</button>
+    <button class="notaccordion" onclick="NoUoh()">I no longer want to apply</button>
+  </div>
 </div>
 
 
@@ -224,6 +275,28 @@ function UoH(){
   document.getElementById("uoh").className = "accordion";
 }
 
+function NoHans(){
+  document.getElementById("hanseninst").className = "hiddenaccordion";
+}
+
+function NoHold(){
+  document.getElementById("holdridgemusic").className = "hiddenaccordion";}
+
+function NoLee(){
+  document.getElementById("leeuni").className = "hiddenaccordion";
+}
+
+function NoLop(){
+  document.getElementById("lopcol").className = "hiddenaccordion";
+}
+
+function NoTam(){
+  document.getElementById("tamcol").className = "hiddenaccordion";
+}
+
+function NoUoH(){
+  document.getElementById("uoh").className = "hiddenaccordion";
+}
 // var addedCollege = localStorage.addedCollege;
 // var COLLEGES = {
 //   "lee university": "Lee University",
