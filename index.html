@@ -8,6 +8,7 @@ body {
 }
 a {
   text-decoration: none;
+  font-family: Helvetica;
 }
 a:link, a:visited {
   color: black;
@@ -59,14 +60,51 @@ a:hover, a:active {
   overflow: hidden;
   width: 87.11%;
 }
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 5px;
+  background: #ccffe6;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #00b35c;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
 </style>
 </head>
 <title> The Better College App Website </title>
 <h1 style= "color:#444; text-align:center; font-size:300%; font-family: Helvetica"> The Better College App Website </h1>
 
 <div align="center">
+  <button class="accordion">About Me</button>
+  <div class="panel">
+  <p style= "font-family: Helvetica;"> Your name </p>
+  <p style= "font-family: Helvetica;"> Your school </p>
+  <a href="aboutme.html"> read more about you </a>
+  </div>
+
 <button class="accordion">Lee University</button>
 <div class="panel">
+  <br> </br>
   <a href="html_images.asp">more information</a>
   <p style= "font-family: Helvetica"> <b> supplemental essay prompt one </b> </p>
   <textarea style= "width:85vw; height:60px;"> </textarea>
@@ -76,6 +114,7 @@ a:hover, a:active {
 
 <button class="accordion">Tam College</button>
 <div class="panel">
+  <br> </br>
   <a href="html_images.asp">more information</a>
   <p style= "font-family: Helvetica"> <b>common app essay</b></p>
   <textarea style= "width:85vw; height:60px;"> </textarea>
@@ -85,6 +124,7 @@ a:hover, a:active {
 
 <button class="accordion">Hansen Institute of Technology</button>
 <div class="panel">
+  <br> </br>
   <a href="html_images.asp">more information</a>
   <p style= "font-family: Helvetica"> <b>common app essay</b></p>
   <textarea style= "width:85vw; height:60px;"> </textarea>
@@ -98,6 +138,7 @@ a:hover, a:active {
 
 <button class="accordion">Lopez College of the Arts</button>
 <div class="panel">
+  <br> </br>
   <a href="html_images.asp">more information</a>
   <p style= "font-family: Helvetica"> <b>common app essay</b></p>
   <textarea style= "width:85vw; height:60px;"> </textarea>
@@ -107,9 +148,43 @@ a:hover, a:active {
   <textarea style= "width:85vw; height:60px;"> </textarea>
 </div>
 
+<button class="accordion">Add Schools</button>
+<div class="panel">
+  <h2 align=left style = "font-family: Helvetica"> Search School </h2>
+  <form class="example" onsubmit="searchSubmit()" style="max-width:70%">
+    <input type="text" id="collegeSearch" placeholder="Search for a University..." name="search">
+    <br> </br>
+  </form>
+</div>
+
+
 </div>
 
 <script>
+
+var COLLEGES = {
+  "lee university": "Lee University",
+  "tam college": "Tam College",
+  "hansen institute of technology": "Hansen Institute of Technology",
+  "lopez college of the arts": "Hansen Institute of Technology",
+  "university of hatfield": "University of Hatfield",
+  "holdridge school of music": "Holdridge School of Music"
+}
+
+function addCollege(){
+  if COLLEGES[value] = "Lee University"(
+
+  )
+}
+
+function searchSubmit(){
+  var value = document.getElementById("collegeSearch").value.toLowerCase();
+  console.log(COLLEGES[value]);
+  COLLEGES[value];
+  debugger;
+
+
+}
 
 var acc = document.getElementsByClassName("accordion");
 var i;
