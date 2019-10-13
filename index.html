@@ -35,7 +35,7 @@ a:hover, a:active {
 
 }
 .accordion:after {
-  content: '▶';
+  content: '\02795';
   font-size: 13px;
   color: #444;
   float: right;
@@ -44,7 +44,7 @@ a:hover, a:active {
 
 .active:after {
 
-  content: "▼";
+  content: "\2796";
   color: white;
 }
 
@@ -103,6 +103,7 @@ form.example::after {
      <option>Orange</option>
 </select>
 </form>
+
   <button class="accordion">About Me</button>
   <div class="panel">
   <p style= "font-family: Helvetica;"> Your name </p>
@@ -180,11 +181,6 @@ var COLLEGES = {
   "university of hatfield": "University of Hatfield",
   "holdridge school of music": "Holdridge School of Music"
 }
-
-function addToDropdown(){
-  //if COLLEGES[value] =
-}
-
 
 function searchSubmit(){
   var value = document.getElementById("collegeSearch").value.toLowerCase();
