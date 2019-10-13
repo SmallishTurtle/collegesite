@@ -171,7 +171,7 @@ form.example::after {
 </div>
 
 <script>
-var addedCollege;
+var addedCollege = localStorage.addedCollege;
 var COLLEGES = {
   "lee university": "Lee University",
   "tam college": "Tam College",
@@ -189,7 +189,8 @@ function addToDropdown(){
 function searchSubmit(){
   var value = document.getElementById("collegeSearch").value.toLowerCase();
   console.log(COLLEGES[value]);
-  COLLEGES[value] = addedCollege;
+  addedCollege = COLLEGES[value];
+  localStorage.addedCollege = addedCollege;
   //debugger;
   addToDropdown();
 
